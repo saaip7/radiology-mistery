@@ -5,31 +5,9 @@ import { Button } from "@/components/ui/button"
 import { ExpandingHero } from "@/components/expanding-hero"
 import { Footer } from "@/components/footer"
 
+import {codes} from "@/data/codes"
+
 export default function Home() {
-  // Sample case data
-  const cases = [
-    {
-      id: "case-1",
-      title: "Mysterious Lung Nodule",
-      description:
-        "A 45-year-old patient presents with an unusual nodular pattern in the right upper lobe. Can you identify the underlying condition?",
-      image: "/temp-img.jpg",
-    },
-    {
-      id: "case-2",
-      title: "Cranial Abnormality",
-      description:
-        "This pediatric case shows an unexpected finding in the temporal region. Review the images and provide your diagnosis.",
-      image: "/temp-img.jpg",
-    },
-    {
-      id: "case-3",
-      title: "Spinal Irregularity",
-      description:
-        "Patient reports chronic back pain with no prior trauma. The imaging reveals a subtle but significant finding.",
-      image: "/temp-img.jpg",
-    },
-  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -60,7 +38,7 @@ export default function Home() {
         </div>
 
         <div className="space-y-6">
-          {cases.map((caseItem) => (
+          {codes.slice(0,3).map((caseItem) => (
             <div
               key={caseItem.id}
               className="flex flex-col md:flex-row gap-6 p-6 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow bg-white"

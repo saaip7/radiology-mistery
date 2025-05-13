@@ -3,18 +3,32 @@ import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card"; // Assuming you have a Card component
+import { Card, CardContent } from "@/components/ui/card";
 import { codes } from "@/data/codes";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
-export async function generateStaticParams() {
-  return codes.map((code) => ({
-    id: code.id,
-  }));
+interface CodeItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  difficulty: string;
+  category: string;
 }
 
+export default function SuspectsPage() {
+  const params = useParams();
+  const [selectedCode, setSelectedCode] = useState<CodeItem | null>(null);
 
-export default async function SuspectsPage({ params }: { params: { id: string } }) {
-  const selectedCode = codes.find((code) => code.id === params.id);
+
+  useEffect(() => {
+    if (params && params.id) {
+      const codeId = Array.isArray(params.id) ? params.id[0] : params.id;
+      const foundCode = codes.find((code) => code.id === codeId);
+      setSelectedCode(foundCode || null);
+    }
+  }, [params]);
 
   if (!selectedCode) {
     return (
