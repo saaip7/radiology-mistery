@@ -109,7 +109,7 @@ export default function SuspectsPage() {
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mb-2">{code.title}</h2>
                 <p className="text-gray-600 mb-4">{code.description}</p>
-                <Link href={`/codes/${code.id}`}>
+                <Link href={`/suspects/${code.id}`}>
                   <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 mt-auto">View Details</Button>
                 </Link>
               </div>
