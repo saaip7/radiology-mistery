@@ -2,45 +2,14 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
-const sidebarItems = [
-  {
-    id: "A",
-    title: "Code A: Initial Findings",
-    category: "Chest",
-    difficulty: "Medium"
-  },
-  {
-    id: "B", 
-    title: "Code B: Follow-up CT",
-    category: "Chest", 
-    difficulty: "Hard"
-  },
-  {
-    id: "C",
-    title: "Code C: PET Scan Results", 
-    category: "Nuclear",
-    difficulty: "Hard"
-  },
-  {
-    id: "D",
-    title: "Code D: Biopsy Report",
-    category: "Pathology", 
-    difficulty: "Medium"
-  },
-  {
-    id: "E",
-    title: "Code E: Treatment Plan",
-    category: "Oncology",
-    difficulty: "Expert"
-  }
-]
+import {codes} from "@/data/codes"
 
 export function Sidebar() {
   return (
     <div className="w-64 bg-white border-r border-gray-200 p-4">
       <h2 className="text-xl font-bold mb-4">Suspect List</h2>
       <div className="space-y-2">
-        {sidebarItems.map((item) => (
+        {codes.map((item) => (
           <Link 
             key={item.id} 
             href={`/suspects/${item.id}`}

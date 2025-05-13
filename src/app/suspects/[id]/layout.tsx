@@ -1,7 +1,7 @@
 // app/suspects/layout.tsx
 import { Sidebar } from "@/components/sidebar-suspects"
 
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { SidebarProvider } from "@/components/ui/sidebar"
 
 export default function SuspectsLayout({ 
   children 
@@ -12,7 +12,6 @@ export default function SuspectsLayout({
     <SidebarProvider>
       <Sidebar/>
       <main>
-        <SidebarTrigger />
         {children}
       </main>
     </SidebarProvider>

@@ -1,69 +1,92 @@
-// app/suspects/page.tsx
-import Link from "next/link"
-import Image from "next/image"
-import { ChevronLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
+'use client'
+import Link from "next/link";
+import Image from "next/image";
+import { ChevronLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card"; // Assuming you have a Card component
+import { codes } from "@/data/codes";
 
-const codes = [
-  {
-    id: "A",
-    title: "Code A: Initial Findings",
-    description:
-      "The initial radiograph shows a subtle opacity in the right upper lobe with irregular borders. There are no calcifications visible within the lesion.",
-    image: "/temp-img.jpg",
-    difficulty: "Medium",
-    category: "Chest",
-  },
-  // ... rest of the codes remain the same
-]
+export async function generateStaticParams() {
+  return codes.map((code) => ({
+    id: code.id,
+  }));
+}
 
-export default function SuspectsPage() {
+
+export default async function SuspectsPage({ params }: { params: { id: string } }) {
+  const selectedCode = codes.find((code) => code.id === params.id);
+
+  if (!selectedCode) {
+    return (
+      <div className="p-6 md:p-10">
+        <h1 className="text-3xl font-bold text-gray-900">Code not found</h1>
+        <Link href="/suspects">
+          <Button variant="ghost" className="mt-4 text-blue-600 hover:text-blue-700">
+            Back to Suspect List
+          </Button>
+        </Link>
+      </div>
+    );
+  }
+
   return (
-    <>
+    <div className="p-6 md:p-10">
       <div className="mb-6">
-        <Link href="/">
+        <Link href="/suspects">
           <Button variant="ghost" className="gap-1 text-blue-600 hover:text-blue-700 p-0">
             <ChevronLeft className="h-4 w-4" />
-            Back to Guidance
+            Back to Suspect List
           </Button>
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold mb-8">Suspect List</h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {codes.map((code) => (
-          <div
-            key={code.id}
-            className="flex flex-col p-6 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-shadow bg-white"
-          >
-            <div className="mb-4">
+      <div className="max-w-4xl mx-auto">
+        <Card className="overflow-hidden border-0 shadow-md rounded-xl">
+          <CardContent className="p-0">
+            <div className="relative h-48 md:h-64 w-full">
               <Image
-                src={code.image || "/placeholder.svg"}
-                alt={code.title}
-                width={300}
-                height={200}
-                className="rounded-lg object-cover w-full h-48"
+                src={selectedCode.image || "/placeholder.svg"}
+                alt={selectedCode.title}
+                fill
+                className="object-cover"
               />
             </div>
-            <div className="flex-1">
-              <div className="flex gap-2 mb-2">
-                <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                  {code.category}
-                </span>
-                <span className="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">
-                  {code.difficulty}
-                </span>
+            <div className="p-6 md:p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <h1 className="text-3xl font-bold">{selectedCode.title}</h1>
               </div>
-              <h2 className="text-xl font-bold text-gray-900 mb-2">{code.title}</h2>
-              <p className="text-gray-600 mb-4">{code.description}</p>
-              <Link href={`/suspects/${code.id}`}>
-                <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 mt-auto">View Details</Button>
-              </Link>
+              <p className="text-gray-600 text-lg">{selectedCode.description}</p>
+
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-cyan-50">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🔍</span>
+                    <h3 className="font-semibold">Key Observations</h3>
+                  </div>
+                  <ul className="list-disc list-inside text-gray-600 pl-2">
+                    <li>Primary finding location and characteristics</li>
+                    <li>Secondary findings and associated features</li>
+                    <li>Comparison with previous studies</li>
+                  </ul>
+                </div>
+                <div className="p-4 rounded-lg bg-gradient-to-r from-blue-50 to-indigo-50">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">💡</span>
+                    <h3 className="font-semibold">Differential Diagnosis</h3>
+                  </div>
+                  <ul className="list-disc list-inside text-gray-600 pl-2">
+                    <li>Most likely diagnosis based on imaging</li>
+                    <li>Alternative diagnostic considerations</li>
+                    <li>Recommended follow-up studies</li>
+                  </ul>
+                </div>
+              </div>
+
+              <Button className="mt-6 rounded-full bg-blue-600 hover:bg-blue-700">Download Full Report</Button>
             </div>
-          </div>
-        ))}
+          </CardContent>
+        </Card>
       </div>
-    </>
-  )
+    </div>
+  );
 }
