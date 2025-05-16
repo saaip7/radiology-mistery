@@ -59,11 +59,6 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
                   </div>
                 </CardHeader>
                 <CardContent className="p-6">
-                <div className="mt-8">
-                    <h3 className="text-lg font-semibold mb-4">Radiological Images</h3>
-                    <ImageCarousel images={selectedCode.images} imageSource={selectedCode.imageSource} />
-                  </div>
-
                   <Tabs defaultValue="clinical" className="w-full">
                     <TabsList className="grid grid-cols-4 mb-6">
                       <TabsTrigger value="clinical">Clinical Findings</TabsTrigger>
@@ -112,7 +107,10 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
                     </TabsContent>
                   </Tabs>
 
-  
+                  <div className="mt-8">
+                    <h3 className="text-lg font-semibold mb-4">Radiological Images</h3>
+                    <ImageCarousel images={selectedCode.images} imageSource={selectedCode.imageSource} />
+                  </div>
 
                   <div className="mt-8 flex justify-end">
                     <Button className="rounded-full bg-blue-600 hover:bg-blue-700">Download Full Report</Button>
