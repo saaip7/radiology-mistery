@@ -20,11 +20,8 @@ export function Sidebar() {
               className="w-full justify-start text-left hover:bg-gray-100"
             >
               <div>
-                <div className="font-semibold">{item.title}</div>
+                <div className="font-semibold">{item.id}</div>
                 <div className="text-xs text-gray-500 flex gap-2">
-                  <span>{item.category}</span>
-                  <span>•</span>
-                  <span>{item.difficulty}</span>
                 </div>
               </div>
             </Button>

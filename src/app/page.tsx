@@ -19,13 +19,13 @@ export default function Home() {
         
 
         <div className="flex justify-between items-center mt-32 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">Available Cases</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Suspects List</h2>
           <Link href="/suspects">
-            <Button className="rounded-full bg-blue-600 hover:bg-blue-700">View All Cases</Button>
+            <Button className="rounded-full bg-blue-600 hover:bg-blue-700">Lihat Semua</Button>
           </Link>
         </div>
 
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           {codes.slice(0,3).map((caseItem) => (
             <div
               key={caseItem.id}
@@ -55,7 +55,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       {/* Footer */}
