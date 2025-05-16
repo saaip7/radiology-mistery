@@ -23,11 +23,11 @@ export const codes = [
         "/suspect1/SuspectList1-Swiped.jpg",
         "/suspect1/suspectlist1 swipe 2.png"
       ],
-      "imageSource": "Primary TB: source: https://www.radiologymasterclass.co.uk/gallery/chest/pulmonary-disease/tuberculosis_tb"
+      "imageSource": "source: https://www.radiologymasterclass.co.uk/gallery/chest/pulmonary-disease/tuberculosis_tb"
     },  
     {
       "id": "B",
-      "title": "Tension Pneumothorax",
+      "title": "Tension Pneumothorax Sinistra dengan Kolaps Pulmo Sinistra",
       "clinicalFindings": "Pria 30 tahun pasca trauma.",
       "radiologyFindings": {
         "Paru": "Corakan paru sinistra (-)",
@@ -49,88 +49,86 @@ export const codes = [
         "/suspect2/SuspectList2.png",
         "/suspect2/SuspectList2-Swiped.png"
       ],
-      "imageSource": "Tension pneumothorax sinistra dengan kolaps pulmo sinistra. Source : Intermediate Radiology skills lab blok II.2"
+      "imageSource": "source: Intermediate Radiology skills lab blok II.2"
     },  
     {
-      id: "C",
-      title: "Code C: PET Scan Results - Metabolic Activity",
-      clinicalFindings:
-        "45-year-old female with confirmed non-small cell lung carcinoma. PET-CT ordered for staging purposes.",
-      radiologyFindings: {
-        Lung: "Known right upper lobe mass with intense FDG uptake (SUV max 12.4).",
-        Mediastinum: "Two hypermetabolic mediastinal lymph nodes in stations 4R and 7.",
-        Pleura: "No pleural involvement.",
-        Airway: "Normal",
-        Bone: "No evidence of osseous metastases.",
-        Cardiac: "Normal cardiac uptake.",
-        Diaphragm: "Normal",
-        "Distant Sites": "No evidence of distant metastatic disease.",
+      "id": "C",
+      "title": "Cardiomegaly dengan Edema Pulmonum",
+      "clinicalFindings": "Pria 75 tahun dengan dispnea saat istirahat dan aktivitas.",
+      "radiologyFindings": {
+        "Paru": "Corak vesikuler meningkat",
+        "Mediastinum": "Tidak deviasi",
+        "Pleura": "Normal",
+        "Saluran Napas": "Normal",
+        "Tulang": "Normal",
+        "Jantung": "Kardiomegali",
+        "Diafragma": "Normal",
+        "Esofagus": "Normal"
       },
-      differentialDiagnosis: [
-        "Stage IIIA (T3N1M0) non-small cell lung carcinoma",
-        "Inflammatory process with reactive lymphadenopathy",
-        "Granulomatous disease with hypermetabolic activity",
+      "differentialDiagnosis": [
+        "Pneumonia bakterial",
+        "Gagal jantung kongestif",
+        "Kardiomiopati"
       ],
-      pathomechanism:
-        "PET scans utilize the glucose analog fluorodeoxyglucose (FDG) which is preferentially taken up by metabolically active cells. Cancer cells typically demonstrate increased glucose metabolism due to the Warburg effect - a shift toward glycolysis even in the presence of oxygen. The SUV (standardized uptake value) quantifies the intensity of FDG uptake, with higher values generally correlating with more aggressive malignancies.",
-      images: [
-        "/suspect2/SuspectList2.png",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+      "pathomechanism": "Kardiomegali adalah pembesaran jantung, sedangkan edema pulmonum adalah penumpukan cairan di paru-paru. Keduanya sering kali berhubungan secara patofisiologis, terutama pada kasus gagal jantung kiri (left-sided heart failure) sehingga terjadi penurunan kemampuan untuk memompa darah. Hal ini memicu peningkatan tekanan balik ke paru-paru, yang meningkatkan tekanan hidrostatik di kapiler paru, sehingga memicu edema pulmonum. Kedua kondisi ini sering kali merupakan bagian dari satu spektrum gagal jantung.",
+      "images": [
+        "/suspect3/SuspectList3.png",
+        "/suspect3/SuspectList3-Swiped.png"
       ],
-      imageSource: "Source: Nuclear Medicine Department / University Hospital",
+      "imageSource": "source: Intermediate Radiology skills lab blok II.2"
     },
     {
-      id: "D",
-      title: "Code D: Biopsy Report - Histopathological Findings",
-      clinicalFindings:
-        "45-year-old female with right upper lobe mass. CT-guided core needle biopsy performed for tissue diagnosis.",
-      radiologyFindings: {
-        Specimen: "Core needle biopsy of right upper lobe mass.",
-        "Microscopic Examination":
-          "Malignant cells with features consistent with non-small cell lung carcinoma, adenocarcinoma subtype.",
-        Immunohistochemistry: "Positive for TTF-1 and Napsin A. Negative for p40, synaptophysin, and chromogranin.",
-        "Molecular Studies": "EGFR mutation negative. ALK rearrangement negative. PD-L1 expression 60%.",
+      "id": "D",
+      "title": "Pneumonia Lobus Superior Pulmo Dextra",
+      "clinicalFindings": "Pria 35 tahun dengan demam dan sesak napas.",
+      "radiologyFindings": {
+        "Paru": "Opasitas inhomogen pada pulmo dextra dengan air bronchogram",
+        "Mediastinum": "Tidak deviasi",
+        "Pleura": "Normal",
+        "Saluran Napas": "Normal",
+        "Tulang": "Normal",
+        "Jantung": "Kardiomegali",
+        "Diafragma": "Normal",
+        "Esofagus": "Normal"
       },
-      differentialDiagnosis: [
-        "Lung adenocarcinoma",
-        "Squamous cell carcinoma",
-        "Metastatic adenocarcinoma from another primary site",
-        "Neuroendocrine tumor",
+      "differentialDiagnosis": [
+        "TB Paru",
+        "Kanker Paru",
+        "Infeksi Jamur"
       ],
-      pathomechanism:
-        "Lung adenocarcinoma arises from the glandular cells that would normally secrete mucus. TTF-1 (Thyroid Transcription Factor-1) is a protein that regulates transcription of genes specific for the thyroid, lung, and diencephalon. Its presence in tumor cells strongly suggests a primary lung origin for adenocarcinoma. Napsin A is an aspartic proteinase involved in the maturation of surfactant protein B, and its expression further supports the diagnosis of primary lung adenocarcinoma.",
-      images: [
-        "/suspect2/SuspectList2.png",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+      "pathomechanism": "Pneumonia lobaris adalah infeksi akut paru yang mengenai satu lobus secara keseluruhan, dalam hal ini lobus superior paru kanan (pulmo dextra superior). Patomekanismenya mengikuti pola klasik empat tahap inflamasi, yang memengaruhi jaringan alveolar secara luas (kongesti → hepatisasi merah → hepatisasi abu-abu → resolusi). Letak lobus dan anatomi bronkus kanan membuatnya lebih rentan terhadap infeksi, terutama dari jalur aspirasi.",
+      "images": [
+        "/suspect4/SuspectList4.png",
+        "/suspect4/SuspectList4-Swiped.png",
+        "/suspect4/SuspectList4-Swiped-2.png"
       ],
-      imageSource: "Source: Department of Pathology / University Medical Center",
-    },
+      "imageSource": "source: Intermediate Radiology skills lab blok II.2"
+    }
+    ,
     {
-      id: "E",
-      title: "Code E: Treatment Plan - Multidisciplinary Approach",
-      clinicalFindings:
-        "45-year-old female with stage IIIA (T3N1M0) non-small cell lung adenocarcinoma. ECOG performance status 1. No significant comorbidities.",
-      radiologyFindings: {
-        "Current Status": "Right upper lobe mass with mediastinal lymphadenopathy. No distant metastases.",
-        "Pulmonary Function": "FEV1 85% predicted. DLCO 80% predicted.",
-        "Cardiac Evaluation": "Normal cardiac function. LVEF 65%.",
-        "Brain MRI": "No evidence of intracranial metastases.",
+      "id": "E",
+      "title": "Metastases from Lung to Bone",
+      "clinicalFindings": "Pria 40 tahun dengan massa yang ditemukan sebagai kanker berdasarkan hasil biopsi.",
+      "radiologyFindings": {
+        "Paru": "Massa paru besar di zona kanan atas",
+        "Mediastinum": "Tidak deviasi",
+        "Pleura": "Normal",
+        "Saluran Napas": "Normal",
+        "Tulang": "Lesi pada costa 6",
+        "Jantung": "Normal",
+        "Diafragma": "Normal",
+        "Esofagus": "Normal"
       },
-      differentialDiagnosis: [
-        "Neoadjuvant chemotherapy followed by surgical resection",
-        "Definitive chemoradiation",
-        "Surgical resection followed by adjuvant therapy",
-        "Immunotherapy in combination with chemotherapy",
+      "differentialDiagnosis": [
+        "Abses paru",
+        "Infark paru",
+        "Hamartoma paru"
       ],
-      pathomechanism:
-        "Stage IIIA non-small cell lung cancer represents locally advanced disease that may still be amenable to curative treatment. Neoadjuvant chemotherapy aims to reduce tumor size before surgery, potentially converting unresectable tumors to resectable ones. It also addresses micrometastatic disease early. The combination of platinum-based chemotherapy with surgical resection has shown improved survival compared to surgery alone in stage IIIA disease.",
-      images: [
-        "/suspect2/SuspectList2.png",
-        "/placeholder.svg?height=400&width=600",
-        "/placeholder.svg?height=400&width=600",
+      "pathomechanism": "Metastasis paru ke tulang adalah penyebaran sel kanker dari tumor primer di paru-paru ke jaringan tulang. Ini merupakan komplikasi lanjutan dari kanker paru — terutama karsinoma sel non-kecil (NSCLC) dan karsinoma sel kecil (SCLC). Tulang adalah salah satu lokasi metastasis paling umum, bersama otak, hati, dan adrenal. Metastasis paru ke tulang terjadi melalui penyebaran hematogen, dengan kolonisasi sel kanker di tulang yang menghasilkan lesi osteolitik destruktif. Ini menyebabkan nyeri tulang, fraktur, dan komplikasi seperti hiperkalsemia. Kondisi ini menandakan stadium lanjut dan memperburuk prognosis.",
+      "images": [
+        "/suspect5/SuspectList5.png",
+        "/suspect5/SuspectList5-Swiped.png"
       ],
-      imageSource: "Source: Oncology Department / Treatment Planning System",
+      "imageSource": "source: "
     },
   ]

@@ -16,15 +16,14 @@ export function Sidebar() {
             className="block"
           >
             <Button 
-              variant="ghost" 
-              className="w-full justify-start text-left hover:bg-gray-100"
-            >
-              <div>
-                <div className="font-semibold">{item.title}</div>
-                <div className="text-xs text-gray-500 flex gap-2">
+                variant="ghost" 
+                className="w-full justify-start text-left hover:bg-gray-100"
+              >
+                <div className="w-full">
+                  <div className="font-semibold truncate w-full">{item.title}</div>
                 </div>
-              </div>
-            </Button>
+              </Button>
+
           </Link>
         ))}
       </div>

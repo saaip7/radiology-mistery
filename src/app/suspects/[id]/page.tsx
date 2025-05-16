@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ChevronLeft } from "lucide-react"
 
 
 import { Footer } from "@/components/footer"
@@ -41,23 +42,19 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
         <main className="flex-1 relative z-10">
           <div className="p-4 md:p-8">
             <div className="mb-6">
-              {/* <Link href="/suspects">
+              <Link href="/suspects">
                 <Button variant="ghost" className="gap-1 text-blue-600 hover:text-blue-700 p-0">
                   <ChevronLeft className="h-4 w-4" />
                   Back to Suspect List
                 </Button>
-              </Link> */}
+              </Link>
             </div>
 
             <div className="max-w-5xl mx-auto">
               <Card className="border-0 shadow-md rounded-xl overflow-hidden">
                 <CardHeader className="bg-blue-600 text-white">
-                  <div className="flex flex-row space-x-2">
-                  <CardTitle className="text-2xl">Kode {selectedCode.id} :</CardTitle>
                   <CardTitle className="text-2xl">{selectedCode.title}</CardTitle>
-
-                  </div>
-                </CardHeader>
+                  </CardHeader>
                 <CardContent className="p-6">
                   <Tabs defaultValue="clinical" className="w-full">
                     <TabsList className="grid grid-cols-4 mb-6">
@@ -112,9 +109,6 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
                     <ImageCarousel images={selectedCode.images} imageSource={selectedCode.imageSource} />
                   </div>
 
-                  <div className="mt-8 flex justify-end">
-                    <Button className="rounded-full bg-blue-600 hover:bg-blue-700">Download Full Report</Button>
-                  </div>
                 </CardContent>
               </Card>
             </div>

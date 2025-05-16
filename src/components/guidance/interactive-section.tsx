@@ -39,7 +39,7 @@ const items = [
   {
     id: 4,
     title: "Angulation",
-    description: "ood visualization of diaphragm and vertebrae spinosus",
+    description: "Good visualization of diaphragm and vertebrae spinosus",
     images: [
       { url: "/angulation/Cranially.png", title: "Cranially" },
       { url: "/angulation/Well-Angulated.png", title: "Well-Angulated" },
@@ -60,7 +60,7 @@ export default function InteractiveSection() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left side - Trigger cards */}
-          <div className="space-y-4">
+          <div className="space-y-4 w-[340px]">
             {items.map((item) => (
               <m.div
                 key={item.id}
