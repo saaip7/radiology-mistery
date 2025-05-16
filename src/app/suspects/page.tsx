@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronLeft, Slice } from "lucide-react"
+import { ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/footer"
 
