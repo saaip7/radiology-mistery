@@ -156,7 +156,7 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
   const { id } = use(params)
 
   const router = useRouter()
-  const [selectedCode, setSelectedCode] = useState(
+  const [selectedCode] = useState(
     suspectData.find((suspect) => suspect.id === id) || suspectData[0],
   )
   
