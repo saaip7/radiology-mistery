@@ -1,7 +1,7 @@
 export const codes = [
     {
       "id": "A",
-      "title": "Kode A: Temuan Awal - Kondisi Paru",
+      "title": "Primary TB",
       "clinicalFindings": "Pria 35 tahun dengan penurunan berat badan dan batuk kronis.",
       "radiologyFindings": {
         "Paru": "Konsolidasi di zona bagian atas paru kanan. Pembesaran hilus ipsilateral.",
@@ -27,7 +27,7 @@ export const codes = [
     },  
     {
       "id": "B",
-      "title": "Kode B: Temuan Awal - Pasca Trauma",
+      "title": "Tension Pneumothorax",
       "clinicalFindings": "Pria 30 tahun pasca trauma.",
       "radiologyFindings": {
         "Paru": "Corakan paru sinistra (-)",
@@ -74,7 +74,7 @@ export const codes = [
       pathomechanism:
         "PET scans utilize the glucose analog fluorodeoxyglucose (FDG) which is preferentially taken up by metabolically active cells. Cancer cells typically demonstrate increased glucose metabolism due to the Warburg effect - a shift toward glycolysis even in the presence of oxygen. The SUV (standardized uptake value) quantifies the intensity of FDG uptake, with higher values generally correlating with more aggressive malignancies.",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        "/suspect2/SuspectList2.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
@@ -101,7 +101,7 @@ export const codes = [
       pathomechanism:
         "Lung adenocarcinoma arises from the glandular cells that would normally secrete mucus. TTF-1 (Thyroid Transcription Factor-1) is a protein that regulates transcription of genes specific for the thyroid, lung, and diencephalon. Its presence in tumor cells strongly suggests a primary lung origin for adenocarcinoma. Napsin A is an aspartic proteinase involved in the maturation of surfactant protein B, and its expression further supports the diagnosis of primary lung adenocarcinoma.",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        "/suspect2/SuspectList2.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],
@@ -127,7 +127,7 @@ export const codes = [
       pathomechanism:
         "Stage IIIA non-small cell lung cancer represents locally advanced disease that may still be amenable to curative treatment. Neoadjuvant chemotherapy aims to reduce tumor size before surgery, potentially converting unresectable tumors to resectable ones. It also addresses micrometastatic disease early. The combination of platinum-based chemotherapy with surgical resection has shown improved survival compared to surgery alone in stage IIIA disease.",
       images: [
-        "/placeholder.svg?height=400&width=600",
+        "/suspect2/SuspectList2.png",
         "/placeholder.svg?height=400&width=600",
         "/placeholder.svg?height=400&width=600",
       ],

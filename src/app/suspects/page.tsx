@@ -1,58 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronLeft } from "lucide-react"
+import { ChevronLeft, Slice } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/footer"
 
+import { codes } from "@/data/codes"
+
 export default function SuspectsPage() {
-  // Sample codes data
-  const codes = [
-    {
-      id: "A",
-      title: "Code A: Initial Findings",
-      description:
-        "The initial radiograph shows a subtle opacity in the right upper lobe with irregular borders. There are no calcifications visible within the lesion.",
-      image: "/temp-img.jpg",
-      difficulty: "Medium",
-      category: "Chest",
-    },
-    {
-      id: "B",
-      title: "Code B: Follow-up CT",
-      description:
-        "The follow-up CT scan reveals a spiculated mass measuring approximately 2.8 x 2.3 cm with areas of central necrosis.",
-      image: "/temp-img.jpg",
-      difficulty: "Hard",
-      category: "Chest",
-    },
-    {
-      id: "C",
-      title: "Code C: PET Scan Results",
-      description:
-        "The PET scan demonstrates intense FDG uptake within the primary lesion with an SUV max of 12.4. There are also two hypermetabolic mediastinal lymph nodes.",
-      image: "/temp-img.jpg",
-      difficulty: "Hard",
-      category: "Nuclear",
-    },
-    {
-      id: "D",
-      title: "Code D: Biopsy Report",
-      description:
-        "Histopathological examination of the biopsy specimen shows malignant cells with features consistent with non-small cell lung carcinoma.",
-      image: "/temp-img.jpg",
-      difficulty: "Medium",
-      category: "Pathology",
-    },
-    {
-      id: "E",
-      title: "Code E: Treatment Plan",
-      description:
-        "Based on the clinical stage IIIA (T3N1M0) disease, the multidisciplinary tumor board recommends neoadjuvant chemotherapy followed by surgical resection.",
-      image: "/temp-img.jpg",
-      difficulty: "Expert",
-      category: "Oncology",
-    },
-  ]
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -91,7 +46,7 @@ export default function SuspectsPage() {
             >
               <div className="mb-4">
                 <Image
-                  src={code.image || "/placeholder.svg"}
+                  src={code.images[0] || "/placeholder.svg"}
                   alt={code.title}
                   width={300}
                   height={200}
@@ -100,15 +55,8 @@ export default function SuspectsPage() {
               </div>
               <div className="flex-1">
                 <div className="flex gap-2 mb-2">
-                  <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">
-                    {code.category}
-                  </span>
-                  <span className="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">
-                    {code.difficulty}
-                  </span>
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mb-2">{code.title}</h2>
-                <p className="text-gray-600 mb-4">{code.description}</p>
                 <Link href={`/suspects/${code.id}`}>
                   <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 mt-auto">View Details</Button>
                 </Link>
