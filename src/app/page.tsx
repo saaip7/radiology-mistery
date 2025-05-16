@@ -2,10 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ExpandingHero } from "@/components/expanding-hero"
 import { Footer } from "@/components/footer"
 
-import { CarouselSlideshow } from "@/components/carousel-slideshow"
 import InteractiveSection from "@/components/guidance/interactive-section"
 
 import {codes} from "@/data/codes"
