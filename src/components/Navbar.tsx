@@ -15,7 +15,7 @@ export function Navbar() {
             variant="outline"
             className="rounded-full border-blue-200 hover:bg-blue-50 hover:text-blue-600"
           >
-            Guidance
+            Image Assessment
           </Button>
         </Link>
         <Link href="/suspects">

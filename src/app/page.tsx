@@ -5,30 +5,20 @@ import { Button } from "@/components/ui/button"
 import { ExpandingHero } from "@/components/expanding-hero"
 import { Footer } from "@/components/footer"
 
+import { CarouselSlideshow } from "@/components/carousel-slideshow"
+import InteractiveSection from "@/components/guidance/interactive-section"
+
 import {codes} from "@/data/codes"
 
 export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Background decorative elements */}
-      <div className="fixed inset-0 pointer-events-none z-0 opacity-5">
-        <div className="absolute top-20 left-10 w-64 h-64 rounded-full border border-blue-500"></div>
-        <div className="absolute bottom-40 right-20 w-96 h-96 rounded-full border border-blue-500"></div>
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-blue-100 rounded-full"></div>
-        <svg className="absolute top-0 right-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59, 130, 246, 0.1)" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-
       {/* Cases Section */}
       <section className="relative container mx-auto px-32 py-12 md:py-16 z-10">
-        <ExpandingHero />
+
+        <InteractiveSection/>
+        
 
         <div className="flex justify-between items-center mt-32 mb-12">
           <h2 className="text-3xl font-bold text-gray-900">Available Cases</h2>
