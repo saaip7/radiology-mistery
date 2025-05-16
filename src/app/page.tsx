@@ -1,12 +1,10 @@
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Footer } from "@/components/footer"
 
 import InteractiveSection from "@/components/guidance/interactive-section"
 
-import {codes} from "@/data/codes"
 
 export default function Home() {
 
