@@ -26,7 +26,7 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
   
   return (
     <div className="flex min-h-screen bg-white w-full">
-      <main className="w-full mt-8">
+      <main className="w-full mt-8 block lg:hidden">
 {/* Mobile dropdown selector */}
 <div className="p-3 md:p-8 flex flex-row w-full justify-between space-x-4">
                 {codes.map((code) => (
