@@ -1,7 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+import { useAudio } from "@/hooks/AudioContext";
+import { Volume2, VolumeX } from "lucide-react";
+
 export function Navbar() {
+  const { toggleAudio, isPlaying } = useAudio();
+
   return (
     <nav className="relative container mx-auto px-32 py-4 flex justify-between items-center border-b border-gray-100 z-10">
       <Link href="/">
@@ -23,6 +30,23 @@ export function Navbar() {
             Suspect List
           </Button>
         </Link>
+        <Button onClick={toggleAudio} className="bg-blue-600 hover:bg-blue-700 rounded-full">
+          {isPlaying ? 
+          <div className="flex flex-row items-center space-x-2">
+            <Volume2 /> 
+            <p className="text-white">
+              Mute
+            </p>
+          </div>
+          : 
+          <div className="flex flex-row items-center space-x-2">
+            <VolumeX />
+            <p className="text-white">
+              Unmute
+            </p>
+          </div>
+            }
+        </Button>
       </div>
     </nav>
   );

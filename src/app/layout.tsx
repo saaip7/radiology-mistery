@@ -3,6 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/footer";
+
+import { AudioProvider } from "@/hooks/AudioContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +32,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AudioProvider>
+        {/* <audio id="audio" loop autoPlay>
+          <source src="/sound/sounds.mp3" type="audio/mpeg" />
+        </audio> */}
         <Navbar />
         {children}
+        <Footer/>
+        </AudioProvider>
       </body>
     </html>
   );
