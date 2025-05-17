@@ -2,7 +2,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Footer } from "@/components/footer"
 
 import { codes } from "@/data/codes"
 
@@ -10,9 +9,9 @@ export default function SuspectsPage() {
 
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white px-[2.5vw]">
 
-      <main className="relative container mx-auto py-8 px-32 z-10">
+      <main className="relative container mx-auto py-8 px-16 z-10">
         <div className="mb-6">
           <Link href="/">
             <Button variant="ghost" className="gap-1 text-blue-600 hover:text-blue-700 p-0">
@@ -52,8 +51,6 @@ export default function SuspectsPage() {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }

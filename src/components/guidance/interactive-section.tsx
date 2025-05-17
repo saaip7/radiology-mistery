@@ -4,6 +4,12 @@ import { useState } from "react"
 import { motion as m, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 
+import { Dialog, DialogContent, DialogHeader, DialogTrigger } from "@/components/ui/dialog"
+import { DialogTitle } from "@radix-ui/react-dialog"
+
+
+
+
 // Sample data for the interactive section
 const items = [
   {
@@ -56,16 +62,37 @@ export default function InteractiveSection() {
       <div className="container mx-auto px-4">
 
         <div>
-            <h2 className="text-3xl font-bold text-left mb-6">Image Assessment</h2>
+            <h2 className="text-4xl font-bold text-left mb-12">Image Assessment</h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left side - Trigger cards */}
-          <div className="space-y-4 w-[340px]">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left side - Trigger cards - smaller width on desktop */}
+          <div className="lg:col-span-3 space-y-4">
+            {/* Mobile trigger selector */}
+            <div className="block lg:hidden mb-6">
+              <select
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={activeId}
+                onChange={(e) => setActiveId(Number(e.target.value))}
+              >
+                {items.map((item) => (
+                  <option key={item.id} value={item.id}>
+                    {item.title}
+                  </option>
+                ))}
+              </select>
+              <div className="mt-4 p-4 bg-gray-50 rounded-md border border-gray-200">
+                <p className="text-gray-600">{items[activeId - 1].description}</p>
+              </div>
+            </div>
+
+            {/* Desktop trigger cards */}
+            <div className="hidden lg:block space-y-4">
             {items.map((item) => (
               <m.div
                 key={item.id}
                 className={`border border-gray-200 rounded-md cursor-pointer overflow-hidden transition-all duration-300 shadow-sm ${
-                  activeId === item.id ? "p-6" : "p-4"
+                  activeId === item.id ? "p-6 bg-blue-50" : "p-4"
                 }`}
                 onClick={() => setActiveId(item.id)}
                 whileHover={{
@@ -78,7 +105,7 @@ export default function InteractiveSection() {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <h3 className="text-xl font-bold">{item.title}</h3>
+                <h3 className={`text-xl font-bold ${activeId === item.id ? "text-blue-600" : ""}`}>{item.title}</h3>
                 {activeId === item.id && (
                   <m.p
                     initial={{ opacity: 0, height: 0 }}
@@ -91,10 +118,11 @@ export default function InteractiveSection() {
                 )}
               </m.div>
             ))}
+            </div>
           </div>
 
-          {/* Right side - Content cards */}
-          <div className="grid grid-cols-1 gap-6 ">
+          {/* Right side - Content cards - larger width on desktop */}
+          <div className="lg:col-span-9">
             <AnimatePresence mode="wait">
               <m.div
                 key={activeId}
@@ -102,13 +130,12 @@ export default function InteractiveSection() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 md:grid-cols-3 gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {items[activeId - 1].images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="group border border-gray-200 rounded-md overflow-hidden shadow-sm hover:border-blue-500 hover:shadow-md transition-all duration-300"
-                  >
+                  <Dialog key={index}>
+                  <DialogTrigger asChild>
+                  <div className="group border border-gray-200 rounded-md overflow-hidden shadow-sm hover:border-blue-500 hover:shadow-lg transition-all duration-300 cursor-pointer">
                     <div className="aspect-square relative">
                       <Image
                         src={image.url || "/placeholder.svg"}
@@ -123,6 +150,24 @@ export default function InteractiveSection() {
                       </h4>
                     </div>
                   </div>
+                  </DialogTrigger>
+                    <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-hidden">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl font-bold">
+                          {items[activeId - 1].title} - {image.title}
+                        </DialogTitle>
+                      </DialogHeader>
+                      <div className="relative w-full aspect-square">
+                        <Image
+                          src={image.url || "/placeholder.svg"}
+                          alt={`${items[activeId - 1].title} - ${image.title}`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold mt-2">{image.title}</h3>
+                    </DialogContent>
+                  </Dialog>
                 ))}
               </m.div>
             </AnimatePresence>

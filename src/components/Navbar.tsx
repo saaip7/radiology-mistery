@@ -10,7 +10,7 @@ export function Navbar() {
   const { toggleAudio, isPlaying } = useAudio();
 
   return (
-    <nav className="relative container mx-auto px-32 py-4 flex justify-between items-center border-b border-gray-100 z-10">
+    <nav className="relative container mx-auto px-[2.5vw] py-4 flex justify-between items-center border-b border-gray-100 z-10">
       <Link href="/">
         <div className="text-2xl font-bold text-blue-600">
           Radiology Mistery

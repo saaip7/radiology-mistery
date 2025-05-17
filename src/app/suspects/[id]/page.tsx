@@ -2,13 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChevronLeft } from "lucide-react"
 
-
-import { Footer } from "@/components/footer"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { ImageCarousel } from "@/components/suspects/image-carousel"
 
@@ -41,14 +36,6 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
 
         <main className="flex-1 relative z-10">
           <div className="p-4 md:p-8">
-            <div className="mb-6">
-              <Link href="/suspects">
-                <Button variant="ghost" className="gap-1 text-blue-600 hover:text-blue-700 p-0">
-                  <ChevronLeft className="h-4 w-4" />
-                  Back to Suspect List
-                </Button>
-              </Link>
-            </div>
 
             <div className="max-w-5xl mx-auto">
               <Card className="border-0 shadow-md rounded-xl overflow-hidden">
@@ -113,8 +100,6 @@ export default function CodePage({ params }: { params: Promise<{ id: string }> }
               </Card>
             </div>
           </div>
-
-          <Footer />
         </main>
       </div>
   )
