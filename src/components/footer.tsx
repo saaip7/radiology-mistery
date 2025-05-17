@@ -2,9 +2,9 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-100 py-8 mt-12 px-32">
+    <footer className="bg-gray-50 border-t border-gray-100 py-8 mt-12 px-[2.5vw]">
       <div className="container mx-auto px-4">
-        <div className="flex flex-row justify-between gap-8">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="max-w-[600px]">
             <h3 className="text-lg font-bold text-blue-600 mb-4">Radiology Mistery</h3>
             <p className="text-gray-600">

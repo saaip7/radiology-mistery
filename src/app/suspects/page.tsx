@@ -11,7 +11,7 @@ export default function SuspectsPage() {
   return (
     <div className="min-h-screen bg-white px-[2.5vw]">
 
-      <main className="relative container mx-auto py-8 px-16 z-10">
+      <main className="relative container mx-auto py-8 px-4 md:px-8 lg:px-16 z-10">
         <div className="mb-6">
           <Link href="/">
             <Button variant="ghost" className="gap-1 text-blue-600 hover:text-blue-700 p-0">
@@ -42,7 +42,7 @@ export default function SuspectsPage() {
                 <div className="flex gap-2 mb-2">
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mb-2 line-clamp-1">{code.title}</h2>
-                <p className="text-gray-700 min-h-[60px]">{code.clinicalFindings}</p>
+                <p className="text-gray-700 min-h-[80px] md:min-h-[64px]">{code.clinicalFindings}</p>
                 <Link href={`/suspects/${code.id}`}>
                   <Button className="w-full rounded-full bg-blue-600 hover:bg-blue-700 mt-auto">View Details</Button>
                 </Link>

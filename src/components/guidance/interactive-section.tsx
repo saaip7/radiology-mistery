@@ -151,9 +151,9 @@ export default function InteractiveSection() {
                     </div>
                   </div>
                   </DialogTrigger>
-                    <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-hidden">
+                    <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-hidden">
                       <DialogHeader>
-                        <DialogTitle className="text-2xl font-bold">
+                        <DialogTitle className="text-lg md:text-2xl font-bold">
                           {items[activeId - 1].title} - {image.title}
                         </DialogTitle>
                       </DialogHeader>
@@ -165,7 +165,6 @@ export default function InteractiveSection() {
                           className="object-contain"
                         />
                       </div>
-                      <h3 className="text-xl font-bold mt-2">{image.title}</h3>
                     </DialogContent>
                   </Dialog>
                 ))}

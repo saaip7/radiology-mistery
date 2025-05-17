@@ -9,11 +9,13 @@ export default function SuspectsLayout({
   children: React.ReactNode 
 }) {
   return (
-    <SidebarProvider>
-      <Sidebar/>
-      <main>
-        {children}
-      </main>
-    </SidebarProvider>
+    <html lang="en" >
+      <body>
+        <div className="flex flex-row">
+          <Sidebar/>
+          {children}
+        </div>
+      </body>
+    </html>
   )
 }
