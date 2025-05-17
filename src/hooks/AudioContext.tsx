@@ -37,6 +37,9 @@ export const AudioProvider = ({ children }: { children: React.ReactNode }) => {
           .then(() => setIsPlaying(true))
           .catch((e) => console.warn("Autoplay blocked:", e));
       }
+      if (audioRef.current) {
+        audioRef.current.volume = 0.7; // set volume to 10%
+      }
 
       // hanya perlu sekali
       window.removeEventListener("click", handleUserInteraction);
